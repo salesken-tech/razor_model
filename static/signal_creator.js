@@ -43,7 +43,7 @@ $(function(){
         return_obj['prod_id']=$("input#prod_id").val();
         $("#spinner").show();
         $('#spinner').focus();
-        var URL = "http://0.0.0.0:8080/signal_creator?json_data="+JSON.stringify(return_obj)
+        var URL = "http://35.244.25.4:8080/signal_creator?json_data="+JSON.stringify(return_obj)
         $.get(URL,function(data,status){
             $("#spinner").hide();
             alert("Data saved");
@@ -56,7 +56,7 @@ $(function(){
 function display_signal(signal){
     $('#signal_display_container').show();
     $('#col1').text(signal);
-    var URL = "http://0.0.0.0:8080/sentence_processor?signal="+signal;
+    var URL = "http://35.244.25.4:8080/sentence_processor?signal="+signal;
     $.get(URL,function(response,status){
         var all_data = JSON.parse(response);
         var data = all_data["data"];

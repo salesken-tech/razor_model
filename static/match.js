@@ -18,7 +18,7 @@ $(function(){
             var data_string = "sentence="+sentence;
             $.ajax({
             type : "POST",
-            url : "http://192.168.42.191:8080/sentence_match",
+            url : "http://35.244.25.4:8080/sentence_match",
             data : data_string,
             success : function(response,status) {
                 if (response.length > 0){
@@ -52,7 +52,7 @@ $(function(){
             var data_string = "task_id="+org_id;
             $.ajax({
             type : "POST",
-            url : "http://192.168.42.191:8080/lead_qualification_razor?"+data_string,
+            url : "http://35.244.25.4:8080/lead_qualification_razor?"+data_string,
             success : function(response,status) {
                 if (response.length > 0){
                     markup="";
