@@ -1,0 +1,10 @@
+
+drop table if exists product_signal_file
+
+create table product_signal_file(
+id serial primary key,
+product_signal_id int4,
+signal_file bytea,
+threshold float,
+foreign key(product_signal_id) references product_signal(id) on delete cascade
+)

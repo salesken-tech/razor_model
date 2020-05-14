@@ -1,0 +1,13 @@
+host: 192.168.42.191
+password: test
+db_name: postgres
+min_pool: 1
+max_pool: 1
+
+prod_db: sales
+
+signal_path: src/resources/signal_pickles
+signal_name: Lead Qualification
+max_synonims: 10
+default_task_id: 18384657
+default_prod_id: 577
