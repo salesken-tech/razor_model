@@ -2,7 +2,7 @@ host: 35.200.234.61
 password: cx6ac54nmgGtLD1y
 db_name: alpha
 min_pool: 1
-max_pool: 1
+max_pool: 10
 
 prod_db: sales
 
