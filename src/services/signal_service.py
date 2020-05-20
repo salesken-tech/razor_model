@@ -44,9 +44,10 @@ def delete_product_signal(signal_id):
 
 
 def make_cached_signals_product(task_id):
-    sql = "select pipeline_product.product_id from pipeline_product where pipeline_product.pipeline_id in( select " \
-          "pipeline.id from pipeline where pipeline.organization_id in ( select org_user.organizationid from org_user " \
-          "where org_user.userid = ( select task.actor from task where task.id = %s))) "
+    # sql = "select pipeline_product.product_id from pipeline_product where pipeline_product.pipeline_id in( select " \
+    #       "pipeline.id from pipeline where pipeline.organization_id in ( select org_user.organizationid from org_user " \
+    #       "where org_user.userid = ( select task.actor from task where task.id = %s))) "
+    sql = "select product_id from lead  where lead.id =(select task.lead_id from task where task.id=%s)"
     rows, col_names = db.DBUtils.get_instance().execute_query(sql, (task_id,), is_write=False, is_return=True)
     if len(rows) > 0:
         product_id = rows[0][col_names.index("product_id")]
