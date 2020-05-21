@@ -30,6 +30,11 @@ def vad_chunk_match(vad_chunk, product_id):
                         matched.append(tok)
                         score += signal_df.score[i]
             if score >= threshold:
+                score = (score - 5) / 25
+                if score < 0.7:
+                    score = 0.7
+                if score > 1:
+                    score = 1
                 return Match(vad_chunk.sid, signal.sid, vad_chunk.text, signal.value, matched, score, threshold,
                              vad_chunk,
                              signal)
